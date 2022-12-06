@@ -5,11 +5,14 @@
         </div>
   </div>
 </div>
-<ul  class="list-group">
+<ul *ngIf="dataLoaded==true" class="list-group">
     <thead>
       <tr>
         <th>Category</th>
       </tr>
     </thead>
-    <li *ngFor="let category of categories" class="list-group-item"> {{category.categoryName}} </li>
+    <li [class]="getAllCategoryClass()" routerLink="/products" > All Products</li>
+    <li (click)="setCurrentCategory(category)" routerLink="/products/category/{{category.categoryID}}" *ngFor="let category of categories" [class]="getCurrentCategoryClass(category)"> {{category.categoryName}} </li>
   </ul>
+
+<h1 *ngIf="currentCategory">{{currentCategory.categoryName}} seçildi</h1>
