@@ -12,6 +12,8 @@ export class ProductComponent implements OnInit {
   
   products: Product[] = [];
   dataLoaded=false;
+  filterText="";
+  
   constructor(private productService:ProductService, 
     private activatedRoute:ActivatedRoute) {}
 

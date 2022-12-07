@@ -14,5 +14,3 @@
     <li [class]="getAllCategoryClass()" routerLink="/products" > All Products</li>
     <li (click)="setCurrentCategory(category)" routerLink="/products/category/{{category.categoryID}}" *ngFor="let category of categories" [class]="getCurrentCategoryClass(category)"> {{category.categoryName}} </li>
   </ul>
-
-<h1 *ngIf="currentCategory">{{currentCategory.categoryName}} seçildi</h1>

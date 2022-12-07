@@ -5,21 +5,32 @@
           </div>
     </div>
 </div>
-<table *ngIf="dataLoaded==true" class="table">
+
+<div class="mb-3">
+    <label for="filterText" class="form-label">Ürün Ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Ürün ismi giriniz">
+  </div>
+<div *ngIf="filterText.length>1" class="alert alert-success">
+{{filterText}} aradınız
+</div>
+
+  <table *ngIf="dataLoaded==true" class="table">
     <thead>
         <tr>
             <th>ProductID</th>
             <th>Product Name</th>
             <th>CategoryID</th>
             <th>Price</th>
+            <th>Price with VAT</th>
             <th>Stock</th>
         </tr>
     </thead>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of products | filterPipe:filterText">
         <td>{{product.productID}}</td>
-        <td>{{product.productName}}</td>
+        <td>{{product.productName }}</td>
         <td>{{product.categoryID}}</td>
-        <td>{{product.unitPrice}}</td>
+        <td>{{product.unitPrice | currency}}</td>
+        <td>{{product.unitPrice | vatAdded:18 | currency }}</td>
         <td>{{product.unitsInStock}}</td>
     </tr>
 </table>
