@@ -10,9 +10,6 @@
     <label for="filterText" class="form-label">Ürün Ara</label>
     <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Ürün ismi giriniz">
   </div>
-<div *ngIf="filterText.length>1" class="alert alert-success">
-{{filterText}} aradınız
-</div>
 
   <table *ngIf="dataLoaded==true" class="table">
     <thead>
@@ -23,14 +20,20 @@
             <th>Price</th>
             <th>Price with VAT</th>
             <th>Stock</th>
+            <th></th>
         </tr>
     </thead>
-    <tr *ngFor="let product of products | filterPipe:filterText">
-        <td>{{product.productID}}</td>
-        <td>{{product.productName }}</td>
-        <td>{{product.categoryID}}</td>
-        <td>{{product.unitPrice | currency}}</td>
-        <td>{{product.unitPrice | vatAdded:18 | currency }}</td>
-        <td>{{product.unitsInStock}}</td>
-    </tr>
+    <tbody>
+        <tr *ngFor="let product of products | filterPipe:filterText">
+            <td>{{product.productID}}</td>
+            <td>{{product.productName }}</td>
+            <td>{{product.categoryID}}</td>
+            <td>{{product.unitPrice | currency}}</td>
+            <td>{{product.unitPrice | vatAdded:18 | currency }}</td>
+            <td>{{product.unitsInStock}}</td>
+            <td>
+                <button (click)="addToCart(product)" class="btn btn-success"> Add to Cart </button>
+            </td>
+        </tr>
+    </tbody>
 </table>
