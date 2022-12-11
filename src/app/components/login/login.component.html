@@ -14,17 +14,17 @@
                   <h4 class="mt-1 mb-5 pb-1">We are the Koyun Team</h4>
                 </div>
 
-                <form>
+                <form [formGroup]="loginForm" >
                   <p>Please login to your account</p>
 
                   <div class="form-outline mb-4">
-                    <input type="text" id="form2Example11" class="form-control"
-                      placeholder="Enter Username" />
+                    <input formControlName="email" type="email" id="form2Example11" class="form-control"
+                      placeholder="Enter Email" />
                     
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input #x type="password" id="form2Example22" class="form-control" placeholder="Enter Password"/>
+                    <input formControlName="password" #x type="password" id="form2Example22" class="form-control" placeholder="Enter Password"/>
                   </div>
                  
                   <div class="text-center pt-1 mb-2 pb-1">
@@ -32,7 +32,7 @@
                   </div>
                  
                   <div class="text-center pt-1 mb-2 pb-1">
-                    <button type="button" class="btn btn-outline-primary">Log in</button>
+                    <button (click)="login()" type="button" class="btn btn-outline-primary">Log in</button>
                   </div>
 
                   <div class="d-flex align-items-center justify-content-center pb-4">
@@ -57,6 +57,10 @@
     </div>
   </div>
 </section>
+
+
+
+
 
 
 
