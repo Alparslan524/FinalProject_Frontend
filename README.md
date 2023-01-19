@@ -1,3 +1,27 @@
+# FinalProject
+
+## Proje Amacı
+[Kodlama.io](https://www.kodlama.io) sitesinden katıldığım [kampın](https://www.kodlama.io/courses/enrolled/1235979) kodlarını içermektedir.
+*** 
+## Kullanılan Dil ve Teknolojiler
+* Angular
+* Html-Css-Bootstrap
+* JavaScript
+* TypeScript
+* Node.Js
+***
+
+
+# Alparslan Aydoğan
+- [GitHub](https://github.com/Alparslan524)
+- [Linkedin](https://www.linkedin.com/in/alparslan-aydoğan-6038771bb/)
+***
+
+
+
+
+
+
 # Northwind
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2
